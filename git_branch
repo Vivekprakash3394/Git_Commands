@@ -1,0 +1,10 @@
+1. git clone url
+2. git branch branch_name (create branch)
+	or
+   git checkout -b branch_name (create branch and switeched on that branch)
+3. make some changes in the branch file.
+4. git status
+5. git add -A
+6. git commit -m "ur msg"
+7. git push origin branch_name
+8. Done!!!

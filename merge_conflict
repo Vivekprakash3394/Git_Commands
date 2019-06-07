@@ -1,0 +1,77 @@
+How to solve merge conflict using CLI
+########################################################################################################################
+1. clone git repo
+==> git clone url
+------------------------------------------------------------------------------------------------------------------------
+2. create branch
+==> git branch branch_name (create only branch)
+	or
+==> git checkout -b branch_name(create and switched on that branch)
+------------------------------------------------------------------------------------------------------------------------
+3. Now you can check the changes
+==> git diff
+------------------------------------------------------------------------------------------------------------------------
+4. create some changes
+------------------------------------------------------------------------------------------------------------------------
+5. now stage and commit this with one command
+==> git commit -a -m "change created"
+------------------------------------------------------------------------------------------------------------------------
+6. now checkout the master and do some changes in the same file, which we were did using another branch
+------------------------------------------------------------------------------------------------------------------------
+7. now commit the changes 
+==> git commit -a -m "change created by master branch"
+------------------------------------------------------------------------------------------------------------------------
+8. now check status
+==> git status
+------------------------------------------------------------------------------------------------------------------------
+9. now merge branch with the master
+==> git merge first_file (my branch name)
+    you will get output something like this
+	[root@servervps linux-commands]# git merge first_file 
+	Auto-merging ps
+	CONFLICT (content): Merge conflict in ps
+	Automatic merge failed; fix conflicts and then commit the result.
+
+     here,  i have done some changes in the ps file from master as well as first_file branch
+     now it is showing that there is some conflict so we need to solve this confict
+------------------------------------------------------------------------------------------------------------------------
+10. edit that (ps) file and currect it.
+------------------------------------------------------------------------------------------------------------------------
+11. now add this file 
+==> git add ps
+------------------------------------------------------------------------------------------------------------------------
+12. now check status
+==> git status
+	you will get output something like this
+
+[root@servervps linux-commands]# git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# All conflicts fixed but you are still merging.
+#   (use "git commit" to conclude merge)
+#
+# Changes to be committed:
+#
+#	modified:   ps
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	Git_Commands/
+
+
+	it shows the all conficts fixed but you are still merging
+------------------------------------------------------------------------------------------------------------------------
+13. git commit
+	you can still check your confict msg here
+------------------------------------------------------------------------------------------------------------------------
+14. All Done
+	now you can push your changes to master branch
+------------------------------------------------------------------------------------------------------------------------
+15. git add -A
+16. git commit -m "git conflicts"
+17. git pull
+18. git push
+
